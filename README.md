@@ -1,6 +1,10 @@
 # get-out
 A base frame for in and outs.
 
+# charts
+- line chart of day(entries count - time window)
+- bar chart of month(each day count - days window)
+- bar chart of year(each month count - months window)
 
 # entries info
 {
