@@ -2,9 +2,11 @@
 A base frame for in and outs.
 
 # charts
-- line chart of day(entries count - time window)
-- bar chart of month(each day count - days window)
-- bar chart of year(each month count - months window)
+- line chart of strength at time(minute/hour wise)
+- bar chart of month(each day people count - days window)
+- bar chart of year(each month people count - months window)
+- bar chart of onlys INs/OUTs(minute/hour wise)
+- custom chart of current capacity percentage
 
 # APIs
 #### add location:
@@ -19,24 +21,44 @@ Return: {record_id}
 
 
 # entries info
-{
-  "location_id": [
-    {
-      "id": "id",
-      "location_id": "location id",
-      "gate_id": "gate id",
-      "entry_type": "entry/exit",
-      "timestamp": "timestamp"
-    },
-    {
-      "id": "id",
-      "location_id": "location id1",
-      "gate_id": "gate id",
-      "entry_type": "exit",
-      "timestamp": "timestamp"
+each location_id will be a collection and each collection will have following:<br>
+[
+  {
+    "timestamp_minute_1": {
+      "tot_ins": "count",
+      "tot_outs": "count",
+      "records": [
+        {
+          "entry_id": "id",
+          "gate_id": "gate id",
+          "entry_type": "entry/exit",
+          "timestamp": "timestamp"
+        },
+        {
+          "entry_id": "id",
+          "gate_id": "gate id",
+          "entry_type": "entry/exit",
+          "timestamp": "timestamp"
+        }
+      ]
     }
-  ]
-}
+  },
+  {
+    "timestamp_minute_2": {
+      "tot_ins": "count",
+      "tot_outs": "count",
+      "records": [
+        {
+          "entry_id": "id",
+          "gate_id": "gate id",
+          "entry_type": "exit",
+          "timestamp": "timestamp"
+        }
+      ]
+    }
+  }
+]
+
 
 # locations schema
 {
