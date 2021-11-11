@@ -1,5 +1,5 @@
 # get-out
-A base frame for in and outs.
+A base frame for measuring/analyzing in and outs. It's kind of a people counting software.
 
 # charts
 - line chart of strength at time(minute/hour wise)
